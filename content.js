@@ -1,6 +1,5 @@
 // content.js
 
-
 function debounce(func, wait) {
   let timeout;
   return function executedFunction(...args) {
@@ -25,6 +24,8 @@ function applyUniqueBackgroundColors() {
       '#F43F5E',
       '#EAB308',
       '#8B5CF6',
+      '#64748B',
+      '#C2410C',
       // Add more colors if needed
     ];
 
