@@ -5,6 +5,7 @@
     "description": "Pivotal Tracker Styler enhances the look and feel of Pivotal Tracker, making it more enjoyable and visually appealing.",
     "icons": {
       "32": "icon-32x32.png",
+      "128": "icon-128x128.png",
       "192": "icon-192x192.png"
     },
     "permissions": ["activeTab"],
