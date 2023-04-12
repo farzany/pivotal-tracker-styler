@@ -74,6 +74,11 @@ section.project article.main {
     background-color: lightblue;
 }
 
+section.project article.main.expanded {
+    left: 231px !important;
+    background-color: lightblue;
+}
+
 .panel .end_of_list.item .preview {
     background-color: white !important;
     border-radius: 0 0 10px 10px !important;
