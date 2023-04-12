@@ -1,25 +1,27 @@
 {
-    "manifest_version": 3,
-    "name": "Pivotal Tracker Styler",
-    "version": "1.0",
-    "description": "Pivotal Tracker Styler enhances the look and feel of Pivotal Tracker, making it more enjoyable and visually appealing.",
-    "icons": {
-      "32": "icon-32x32.png",
-      "128": "icon-128x128.png",
-      "192": "icon-192x192.png"
-    },
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "32": "icon-32x32.png"
-      }
-    },
-    "content_scripts": [
-      {
-        "matches": ["https://www.pivotaltracker.com/n/projects/*"],
-        "js": ["content.js"],
-        "css": ["styles.css"]
-      }
-    ]
-  }
-  
+  "manifest_version": 3,
+  "name": "Pivotal Tracker Styler",
+  "version": "1.0",
+  "description": "Pivotal Tracker Styler enhances the look and feel of Pivotal Tracker, making it more enjoyable and visually appealing.",
+  "icons": {
+    "32": "icon-32x32.png",
+    "128": "icon-128x128.png",
+    "192": "icon-192x192.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "32": "icon-32x32.png"
+    }
+  },
+  "permissions": [
+    "https://www.pivotaltracker.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.pivotaltracker.com/n/projects/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}
