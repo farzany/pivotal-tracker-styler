@@ -2,7 +2,7 @@
     background-color: white !important;
     color: #1F2937 !important;
     border-radius: 10px 10px 0 0 !important;
-    border-bottom: 1px solid #8f8f8f !important;
+    border-bottom: 1px solid #DDD !important;
 }
 
 [data-aid="PageHeader"] {
@@ -19,7 +19,11 @@
 
 [data-aid="IterationMarker"] {
     background-color: #3B82F6 !important;
-    padding: 0 5px !important;
+    padding: 0 10px 0 5px !important;
+}
+
+[data-aid="IterationMarker__expander"] {
+    color: white !important;
 }
 
 [data-aid="StoryPreviewItem__preview"] {
