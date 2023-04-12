@@ -8,7 +8,6 @@
       "128": "icon-128x128.png",
       "192": "icon-192x192.png"
     },
-    "permissions": ["activeTab"],
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
