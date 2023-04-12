@@ -5,6 +5,10 @@
     border-bottom: 1px solid #8f8f8f !important;
 }
 
+[data-aid="PageHeader"] {
+    background-color: #334155 !important;
+}
+
 [data-aid="VelocityIndicator"] {
     color: #1F2937 !important;
 }
@@ -71,12 +75,12 @@ span.StoryPreviewItemButtons__container span.state {
 
 section.project article.main {
     left: 175px !important;
-    background-color: lightblue;
+    background-color: #475569;
 }
 
 section.project article.main.expanded {
     left: 231px !important;
-    background-color: lightblue;
+    background-color: #475569;
 }
 
 .panel .end_of_list.item .preview {
@@ -126,4 +130,11 @@ section.edit{
 .story.info_box {
     width: 100% !important;
     margin-right: 0 !important;
+}
+
+.inline-code {
+    background-color: gray !important;
+    padding: 1px 2px;
+    border-radius: 3px;
+    font-family: 'Consolas';
 }
