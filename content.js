@@ -12,7 +12,6 @@ function debounce(func, wait) {
   };
 }
 
-// Add this function to your content.js
 function applyUniqueBackgroundColors() {
   const ownerElements = document.querySelectorAll('.owner');
   const colorMap = {};
@@ -52,42 +51,14 @@ function applyUniqueBackgroundColors() {
   });
 }
 
-function updateButtonContent() {
-  const acceptElements = document.querySelectorAll('.state.button.accept');
-  acceptElements.forEach((element) => {
-    if (element.closest('.state.row')) return;
-    element.textContent = 'A';
-    element.style.fontSize = '22px';
-    element.style.width = '25px';
-  });
-
-  const rejectElements = document.querySelectorAll('.state.button.reject');
-  rejectElements.forEach((element) => {
-    if (element.closest('.state.row')) return;
-    element.textContent = 'R';
-    element.style.fontSize = '22px';
-    element.style.width = '25px';
-  });
-
-  const deliverElements = document.querySelectorAll('.state.button.deliver');
-  deliverElements.forEach((element) => {
-    if (element.closest('.state.row')) return;
-    element.textContent = 'D';
-    element.style.fontSize = '22px';
-    element.style.width = '25px';
-  });
-}
-
 // Apply unique background colors after the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   applyUniqueBackgroundColors();
-  // updateButtonContent();
 });
 
 // If the page uses a dynamic framework, listen for changes to the DOM and apply unique background colors again
 const observer = new MutationObserver(debounce(() => {
   applyUniqueBackgroundColors();
-  // updateButtonContent();
 }, 500));
 
 observer.observe(document.body, {

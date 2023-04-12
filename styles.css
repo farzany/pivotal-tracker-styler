@@ -1,3 +1,5 @@
+/* Header Styles */
+
 [data-aid="PanelHeader"] {
     background-color: white !important;
     color: #1F2937 !important;
@@ -8,6 +10,8 @@
 [data-aid="PageHeader"] {
     background-color: #334155 !important;
 }
+
+/* Ticket Layout Styles */
 
 [data-aid="VelocityIndicator"] {
     color: #1F2937 !important;
@@ -30,10 +34,6 @@
     background-color: white !important;
 }
 
-[data-aid="CommentGutter"] [data-aid="Avatar"] {
-    margin: 0px 5px !important;
-}
-
 header.preview {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
@@ -43,10 +43,44 @@ header.preview {
     display: block !important;
 }
 
+span.story_name {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+span.story_name a.owner {
+    padding: 1px 3px 1px 3px !important;
+    color: white !important;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+}
+
+svg.selector {
+    margin-top: 10px !important;
+}
+
+/* Ticket List Styles */
+
+.layouts .story .preview .parens:before, .layouts .story .preview .parens:after {
+    content: none !important;
+}
+
+.reveal.story.button {
+    margin-top: 10px !important;
+}
+
 label.show, label.hide {
     background-image: none !important;
     background-color: #D1FAE5 !important;
     color: #1F2937 !important;
+}
+
+span.StoryPreviewItemButtons__container span.state {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px;
+    padding-top: 10px;
 }
 
 .items_container::-webkit-scrollbar {
@@ -66,60 +100,10 @@ label.show, label.hide {
     background-color: gray; /* Adjust the thumb color when hovered */
 }
 
-span.StoryPreviewItemButtons__container span.state {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px;
-    padding-top: 10px;
-}
+/* Ticket Details Styles */
 
-.sidebar.expanded {
-    width: 175px;
-}
-
-section.project article.main {
-    left: 175px !important;
-    background-color: #475569;
-}
-
-section.project article.main.expanded {
-    left: 231px !important;
-    background-color: #475569;
-}
-
-.panel .end_of_list.item .preview {
-    background-color: white !important;
-    border-radius: 0 0 10px 10px !important;
-}
-
-span.story_name {
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.layouts .story .preview .parens:before, .layouts .story .preview .parens:after {
-    content: none !important;
-}
-
-span.story_name a.owner {
-    padding: 1px 3px 1px 3px !important;
-    /* background: #3B82F6 !important; */
-    color: white !important;
-    border-radius: 5px;
-    font-size: 10px;
-    text-align: center;
-}
-
-.reveal.story.button {
-    margin-top: 10px !important;
-}
-
-svg.selector {
-    margin-top: 10px !important;
-}
-
-div.story.accepted header.preview {
-    background-color: #D1FAE5 !important;
+[data-aid="CommentGutter"] [data-aid="Avatar"] {
+    margin: 0px 5px !important;
 }
 
 section.edit{
@@ -141,4 +125,29 @@ section.edit{
     padding: 1px 2px;
     border-radius: 3px;
     font-family: 'Consolas';
+}
+
+/* General Page Layout Styles */
+
+.sidebar.expanded {
+    width: 175px;
+}
+
+section.project article.main {
+    left: 175px !important;
+    background-color: #475569;
+}
+
+section.project article.main.expanded {
+    left: 231px !important;
+    background-color: #475569;
+}
+
+.panel .end_of_list.item .preview {
+    background-color: white !important;
+    border-radius: 0 0 10px 10px !important;
+}
+
+div.story.accepted header.preview {
+    background-color: #D1FAE5 !important;
 }
