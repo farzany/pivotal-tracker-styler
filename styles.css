@@ -151,9 +151,3 @@ section.project article.main.expanded {
 div.story.accepted header.preview {
     background-color: #D1FAE5 !important;
 }
-
-/* History Styles */
-
-.item.activity_entry header.preview {
-    background-color: white !important;
-}
