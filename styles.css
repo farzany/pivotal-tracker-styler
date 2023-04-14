@@ -34,6 +34,31 @@
     background-color: white !important;
 }
 
+[data-aid="StoryPreviewItem__preview"].status:after {
+    color: #CBD5E1;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+[data-aid="StoryPreviewItem__preview"].status.progressing:after {
+    content: "PROGRESSING";
+}
+
+[data-aid="StoryPreviewItem__preview"].status.review:after {
+    content: "REVIEW";
+}
+
+[data-aid="StoryPreviewItem__preview"].status.acceptance:after {
+    content: "ACCEPTANCE";
+}
+
+[data-aid="StoryPreviewItem__preview"].status.resolved:after {
+    content: "RESOLVED";
+}
+
 header.preview {
     padding-top: 10px !important;
     padding-bottom: 10px !important;

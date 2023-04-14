@@ -1,5 +1,3 @@
-// content.js
-
 function debounce(func, wait) {
   let timeout;
   return function executedFunction(...args) {
@@ -12,7 +10,7 @@ function debounce(func, wait) {
   };
 }
 
-function applyUniqueBackgroundColors() {
+function applyUniqueColorsForAuthors() {
   const ownerElements = document.querySelectorAll('.owner');
   const colorMap = {};
 
@@ -42,75 +40,74 @@ function applyUniqueBackgroundColors() {
 
     // Update the owner element's background color
     element.style.backgroundColor = backgroundColor;
+
+    // Add a colored left border to the ticket card
+    const headerElement = element.closest('header');
+    if (headerElement) {
+      headerElement.style.boxShadow = `inset 4px 0 0 0 ${backgroundColor}`;
+    }
   });
 }
 
-function applyBoxShadowColorsBasedOnReviewCount() {
-  const parentDivs = document.querySelectorAll('div[id^="panel_current"]');
+function displayTicketStatus() {
+  const storyItems = document.querySelectorAll('.StoryPreviewItem__clickToExpand');
 
-  parentDivs.forEach(parentDiv => {
-    const childDivs = parentDiv.querySelectorAll('.StoryPreviewItem__clickToExpand');
-    childDivs.forEach(childDiv => {
-      const reviewList = childDiv.querySelectorAll('[class^="StoryPreviewItemReviewList"]');
+  storyItems.forEach(storyItem => {
+    const owner = storyItem.querySelector('.owner');
+    const reviewList = storyItem.querySelectorAll('[class^="StoryPreviewItemReviewList"]');
 
-      let totalReviews = 0;
-      let approvedCodeReviewCount = 0;
-      let approvedQaReviewCount = 0;
-      reviewList.forEach(review => {
-        const spans = review.querySelectorAll('span');
-        const reviewSpans = Array.from(spans).filter(span => span.parentElement === review);
-        reviewSpans.forEach(reviewSpan => {
-          const imgPassed = reviewSpan.querySelector('img[alt="Pass"]');
-          const span = reviewSpan.querySelector('span[data-aid="StoryPreviewItemReview__reviewType"]');
+    let totalReviews = 0;
+    let approvedCodeReviewCount = 0;
+    let approvedQaReviewCount = 0;
 
-          totalReviews++;
+    reviewList.forEach(review => {
+      const reviewSpans = Array.from(review.children).filter(child => child.tagName === 'SPAN');
 
-          if (imgPassed && imgPassed.alt === 'Pass' && span?.textContent === 'Code') {
+      reviewSpans.forEach(reviewSpan => {
+        const imgPassed = reviewSpan.querySelector('img[alt="Pass"]');
+        const span = reviewSpan.querySelector('span[data-aid="StoryPreviewItemReview__reviewType"]');
+
+        totalReviews++;
+
+        if (imgPassed) {
+          if (span.textContent === 'Code') {
             approvedCodeReviewCount++;
-          }
-          if (imgPassed && imgPassed.alt === 'Pass' && span?.textContent === 'Test (QA)') {
+          } else if (span.textContent === 'Test (QA)') {
             approvedQaReviewCount++;
           }
-        });
-      });
-
-      if (totalReviews == 0) {
-        //in progress or unstarted
-        const header = childDiv.querySelector('header');
-        header.style.boxShadow = `inset 10px 0 0 0 #EEEEE4`;
-        //TODO: Separate out in progress and unstarted from current sprint
-      } else {
-        if (approvedCodeReviewCount > 1) {
-          if (approvedQaReviewCount > 0) {
-            //resolved
-            const header = childDiv.querySelector('header');
-            header.style.boxShadow = `inset 10px 0 0 0 #99FC98`;
-          } else {
-            //acceptance
-            const header = childDiv.querySelector('header');
-            header.style.boxShadow = `inset 10px 0 0 0 #FDFD96`;
-          }
-        } else {
-          //code review
-          const header = childDiv.querySelector('header');
-          header.style.boxShadow = `inset 10px 0 0 0 #A3D3E5`;
         }
-      }
+      });
     });
+
+    const header = storyItem.querySelector('header');
+    header.classList.add('status')
+
+    if (totalReviews === 0) {
+      if (owner) {
+        header.classList.add('progressing');
+      }
+    } else if (approvedCodeReviewCount > 1) {
+      if (approvedQaReviewCount > 0) {
+        header.classList.add('resolved');
+      } else {
+        header.classList.add('acceptance');
+      }
+    } else {
+      header.classList.add('review');
+    }
   });
 }
-
 
 // Apply unique background colors after the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  applyUniqueBackgroundColors();
-  applyBoxShadowColorsBasedOnReviewCount();
+  applyUniqueColorsForAuthors();
+  displayTicketStatus();
 });
 
 // If the page uses a dynamic framework, listen for changes to the DOM and apply unique background colors again
 const observer = new MutationObserver(debounce(() => {
-  applyUniqueBackgroundColors();
-  applyBoxShadowColorsBasedOnReviewCount();
+  applyUniqueColorsForAuthors();
+  displayTicketStatus();
 }, 500));
 
 observer.observe(document.body, {
