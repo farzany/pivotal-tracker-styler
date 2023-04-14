@@ -56,6 +56,10 @@ span.story_name a.owner {
     text-align: center;
 }
 
+.StoryPreviewItemButtons__container .state.button.reject {
+    display: none !important;
+}
+
 svg.selector {
     margin-top: 10px !important;
 }
