@@ -84,7 +84,7 @@ function displayTicketStatus() {
 
     if (totalReviews === 0) {
       if (owner) {
-        header.classList.add('progressing');
+        header.classList.add('inProgress');
       }
     } else if (approvedCodeReviewCount > 1) {
       if (approvedQaReviewCount > 0) {

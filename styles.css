@@ -43,8 +43,8 @@
     right: 10px;
 }
 
-[data-aid="StoryPreviewItem__preview"].status.progressing:after {
-    content: "PROGRESSING";
+[data-aid="StoryPreviewItem__preview"].status.inProgress:after {
+    content: "IN PROGRESS";
 }
 
 [data-aid="StoryPreviewItem__preview"].status.review:after {
