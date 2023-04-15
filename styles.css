@@ -59,6 +59,10 @@
     content: "RESOLVED";
 }
 
+[data-aid="CommentLayout"] span.tracker_markup {
+    color: #1F2937 !important;
+}
+
 header.preview {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
@@ -133,6 +137,18 @@ span.StoryPreviewItemButtons__container span.state {
 
 [data-aid="CommentGutter"] [data-aid="Avatar"] {
     margin: 0px 5px !important;
+}
+
+div[class*="AddSubresourceButton"], div[class*="TaskEdit"], div[class*="BlockerEdit"] {
+    background-color: #E2E8F0 !important;
+    color: #64748B !important;
+}
+
+div[class*="BlockerEdit"] button[data-aid*="cancelButton"] {
+    background-color: white !important;
+}
+div[class*="BlockerEdit"] button[data-aid*="cancelButton"]:hover {
+    background-color: #64748B !important;
 }
 
 section.edit{
