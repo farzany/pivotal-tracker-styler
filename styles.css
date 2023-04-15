@@ -111,7 +111,6 @@ svg.selector {
     margin-top: 5px !important;
 }
 
-label.show, label.hide {
 label.show, label.hide, .done_bar a {
     background-image: none !important;
     background-color: #D1FAE5 !important;
@@ -210,4 +209,48 @@ div.story.accepted header.preview {
 
 .item.activity_entry header.preview {
     background-color: white !important;
+}
+
+/* Epic Stories Styles */
+
+[class*="EpicStoriesHeader"] {
+    background-color: #3B82F6 !important;
+    padding: 0 5px 0 5px !important;
+    color: white !important;
+    text-shadow: none !important;
+    border: none !important;
+}
+
+[class*="EpicStoriesHeader"] a {
+    text-transform: uppercase !important;
+}
+
+[data-aid*="EpicPreviewItem"].preview {
+    background-color: white !important;
+    color: #1F2937 !important;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+[data-aid*="show-stories"] {
+    background-color: white !important;
+}
+
+[data-aid*="show-stories"]:before {
+    background-color: white !important;
+    margin: 1px 0 0 0 !important;
+    background-image: none !important;
+    content: '›' !important;
+    font-size: 20px;
+    color: #1F2937 !important;
+}
+
+.epic.info_box {
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.epic .help_text {
+    padding: 0 0 5px 0 !important;
+    color: #1F2937 !important;
 }
