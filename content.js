@@ -122,14 +122,25 @@ function customStylingOptions(toggleId, defaultValue, style) {
   });
 }
 
+const options = {
+  'dimUnstartedTickets': {
+    style: `[data-aid="StoryPreviewItem__preview"].status.unstarted {
+      background-color: #E2E8F0 !important;
+      color: #475569 !important;
+    }`,
+    defaultChecked: true
+  },
+  'hideTicketSelectors': {
+    style: '.selector { display: none !important; }',
+    defaultChecked: false
+  }
+};
+
 function init() {
   applyUniqueColorsForAuthors();
   displayTicketStatus();
-  customStylingOptions('hideTicketSelectors', false, '.selector { display: none !important; }');
-  customStylingOptions('dimUnstartedTickets', true, `[data-aid="StoryPreviewItem__preview"].status.unstarted {
-    background-color: #E2E8F0 !important;
-    color: #475569 !important;
-  }`)
+  customStylingOptions('hideTicketSelectors', options['hideTicketSelectors'].defaultChecked, options['hideTicketSelectors'].style);
+  customStylingOptions('dimUnstartedTickets', options['dimUnstartedTickets'].defaultChecked, options['dimUnstartedTickets'].style);
 }
 
 if (document.readyState === 'loading') {
@@ -138,15 +149,16 @@ if (document.readyState === 'loading') {
   init();
 }
 
-// Request listener for options
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (typeof request.hideTicketSelectors !== 'undefined') {
-    customStylingOptions('hideTicketSelectors', false, '.selector { display: none !important; }');
-  } else if (typeof request.dimUnstartedTickets !== 'undefined') {
-    customStylingOptions('dimUnstartedTickets', true, `[data-aid="StoryPreviewItem__preview"].status.unstarted {
-      background-color: #E2E8F0 !important;
-      color: #475569 !important;
-    }`)
+chrome.storage.onChanged.addListener((changes, areaName) => {
+  if (areaName === 'local') {
+    for (const key in changes) {
+      if (key in options) {
+        const style = options[key].style;
+        const defaultChecked = options[key].defaultChecked;
+
+        customStylingOptions(key, defaultChecked, style);
+      }
+    }
   }
 });
 

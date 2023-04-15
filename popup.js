@@ -11,15 +11,6 @@ function setupToggle(toggleId, defaultValue = false) {
     chrome.storage.local.set({
       [toggleId]: isChecked
     });
-
-    chrome.tabs.query({
-      active: true,
-      currentWindow: true
-    }, (tabs) => {
-      chrome.tabs.sendMessage(tabs[0].id, {
-        [toggleId]: isChecked
-      });
-    });
   });
 }
 
