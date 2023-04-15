@@ -23,6 +23,7 @@
 
 [data-aid="IterationMarker"] {
     background-color: #3B82F6 !important;
+    color: white !important;
     padding: 0 10px 0 5px !important;
 }
 
@@ -89,6 +90,13 @@ span.story_name a.owner {
     display: none !important;
 }
 
+.backlog_stories_marker.item {
+    background-color: #334155 !important;
+    color: white !important;
+    text-shadow: none !important;
+    padding-bottom: 4px !important;
+}
+
 svg.selector {
     margin-top: 5px !important;
 }
@@ -104,6 +112,7 @@ svg.selector {
 }
 
 label.show, label.hide {
+label.show, label.hide, .done_bar a {
     background-image: none !important;
     background-color: #D1FAE5 !important;
     color: #1F2937 !important;
