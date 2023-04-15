@@ -98,10 +98,45 @@ function displayTicketStatus() {
   });
 }
 
-// Apply unique background colors after the DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+function toggleTicketSelectors() {
+  chrome.storage.local.get('hideTicketSelectors', (result) => {
+    const hideTicketSelectors = result.hideTicketSelectors || false;
+
+    const styleTagId = 'toggle-selectors-style';
+    let styleTag = document.getElementById(styleTagId);
+  
+    if (hideTicketSelectors) {
+      if (!styleTag) {
+        styleTag = document.createElement('style');
+        styleTag.id = styleTagId;
+        document.head.appendChild(styleTag);
+      }
+      styleTag.textContent = '.selector { display: none !important; }';
+    } else {
+      if (styleTag) {
+        styleTag.textContent = '';
+      }
+    }
+  });
+}
+
+function init() {
   applyUniqueColorsForAuthors();
   displayTicketStatus();
+  toggleTicketSelectors();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+// Request listener
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (typeof request.hideTicketSelectors !== 'undefined') {
+    toggleTicketSelectors();
+  }
 });
 
 // If the page uses a dynamic framework, listen for changes to the DOM and apply unique background colors again

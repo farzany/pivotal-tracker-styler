@@ -10,14 +10,16 @@ body {
     background-color: white;
 }
 
-.popup-header {
+/* Description Styles */
+
+div.description .popup-header {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 24px;
     color: #1F2937;
 }
 
-.popup-description {
+div.description .popup-description {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 16px;
@@ -25,7 +27,6 @@ body {
 }
 
 .popup-author {
-    margin-top: 0;
     padding: 4px 8px;
     border-radius: 5px;
     font-size: 16px;
@@ -34,18 +35,29 @@ body {
     background-color: #3B82F6;
 }
 
-.popup-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
+/* Options Styles */
+
+div.options {
+    padding-bottom: 20px;
     font-size: 16px;
-    color: #fff;
-    background-color: #2196F3;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+    color: #1F2937;
 }
 
-.popup-button:hover {
-    background-color: #1e88e5;
+div.option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+div.options h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #1F2937;
+}
+
+.toggle-switch input {
+    width: 15px;
+    height: 15px;
+    margin-left: 0;
 }
