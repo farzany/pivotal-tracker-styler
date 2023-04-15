@@ -85,6 +85,8 @@ function displayTicketStatus() {
     if (totalReviews === 0) {
       if (owner) {
         header.classList.add('inProgress');
+      } else {
+        header.classList.add('unstarted');
       }
     } else if (approvedCodeReviewCount > 1) {
       if (approvedQaReviewCount > 0) {
@@ -98,20 +100,20 @@ function displayTicketStatus() {
   });
 }
 
-function toggleTicketSelectors() {
-  chrome.storage.local.get('hideTicketSelectors', (result) => {
-    const hideTicketSelectors = result.hideTicketSelectors || false;
+function customStylingOptions(toggleId, defaultValue, style) {
+  chrome.storage.local.get(toggleId, (result) => {
+    const toggled = result[toggleId] !== undefined ? result[toggleId] : defaultValue;
 
-    const styleTagId = 'toggle-selectors-style';
+    const styleTagId = `${toggleId}-style`;
     let styleTag = document.getElementById(styleTagId);
   
-    if (hideTicketSelectors) {
+    if (toggled) {
       if (!styleTag) {
         styleTag = document.createElement('style');
         styleTag.id = styleTagId;
         document.head.appendChild(styleTag);
       }
-      styleTag.textContent = '.selector { display: none !important; }';
+      styleTag.textContent = style;
     } else {
       if (styleTag) {
         styleTag.textContent = '';
@@ -123,7 +125,11 @@ function toggleTicketSelectors() {
 function init() {
   applyUniqueColorsForAuthors();
   displayTicketStatus();
-  toggleTicketSelectors();
+  customStylingOptions('hideTicketSelectors', false, '.selector { display: none !important; }');
+  customStylingOptions('dimUnstartedTickets', true, `[data-aid="StoryPreviewItem__preview"].status.unstarted {
+    background-color: #E2E8F0 !important;
+    color: #475569 !important;
+  }`)
 }
 
 if (document.readyState === 'loading') {
@@ -132,10 +138,15 @@ if (document.readyState === 'loading') {
   init();
 }
 
-// Request listener
+// Request listener for options
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (typeof request.hideTicketSelectors !== 'undefined') {
-    toggleTicketSelectors();
+    customStylingOptions('hideTicketSelectors', false, '.selector { display: none !important; }');
+  } else if (typeof request.dimUnstartedTickets !== 'undefined') {
+    customStylingOptions('dimUnstartedTickets', true, `[data-aid="StoryPreviewItem__preview"].status.unstarted {
+      background-color: #E2E8F0 !important;
+      color: #475569 !important;
+    }`)
   }
 });
 
