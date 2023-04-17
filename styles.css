@@ -35,13 +35,31 @@
     background-color: white !important;
 }
 
-[data-aid="StoryPreviewItem__preview"].status:after {
+[data-aid="StoryPreviewItem__preview"]:has(.dense) {
+    min-height: none !important;
+}
+
+[data-aid="StoryPreviewItem__preview"]:not(:has(.dense)) {
+    min-height: 60px;
+}
+
+.dense [data-aid*="StoryPreviewItem"].status:after {
+    display: none !important;
+}
+
+[data-aid*="StoryPreviewItem"].status:after {
     color: #CBD5E1;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     position: absolute;
     bottom: 10px;
     right: 10px;
+    padding-top: 10px;
+    display: block !important;
+}
+
+[data-aid="StoryPreviewItem__preview"].status.accepted:after {
+    content: "";
 }
 
 [data-aid="StoryPreviewItem__preview"].status.inProgress:after {
@@ -49,7 +67,7 @@
 }
 
 [data-aid="StoryPreviewItem__preview"].status.review:after {
-    content: "REVIEW";
+    content: "IN REVIEW";
 }
 
 [data-aid="StoryPreviewItem__preview"].status.acceptance:after {
@@ -69,8 +87,12 @@ header.preview {
     padding-bottom: 10px !important;
 }
 
-.StoryPreviewItem__meta__top___2BJiw01g {
-    display: block !important;
+.dense .StoryPreviewItem__meta__top___2BJiw01g { 
+    display: flex !important; 
+}
+
+.StoryPreviewItem__meta__top___2BJiw01g { 
+    display: block !important; 
 }
 
 span.story_name {

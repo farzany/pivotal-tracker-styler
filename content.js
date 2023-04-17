@@ -82,8 +82,14 @@ function displayTicketStatus() {
     const header = storyItem.querySelector('header');
     header.classList.add('status')
 
-    if (totalReviews === 0) {
-      if (owner) {
+    const parentDiv = header.parentElement;
+    const accepted = parentDiv.classList.contains('accepted');
+    const started = parentDiv.classList.contains('started');
+
+    if (accepted) {
+      header.classList.add('accepted');
+    } else if (totalReviews === 0) {
+      if (owner || started) {
         header.classList.add('inProgress');
       } else {
         header.classList.add('unstarted');
