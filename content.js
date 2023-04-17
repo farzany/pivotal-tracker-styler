@@ -22,6 +22,7 @@ function applyUniqueColorsForAuthors() {
       '#EAB308',
       '#8B5CF6',
       '#64748B',
+      '#FDBA74',
       '#C2410C',
       // Add more colors if needed
     ];
