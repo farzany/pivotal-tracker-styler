@@ -93,6 +93,10 @@ svg.selector {
     margin-top: 5px !important;
 }
 
+[class*='StoryPreviewItemReviewList'] {
+    max-width: 235px !important;
+}
+
 /* Ticket Status */
 
 .release [data-aid*="StoryPreviewItem"] .story_name {
