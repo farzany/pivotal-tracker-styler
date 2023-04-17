@@ -43,6 +43,66 @@
     min-height: 60px;
 }
 
+[data-aid="CommentLayout"] span.tracker_markup {
+    color: #1F2937 !important;
+}
+
+header.preview {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.dense .StoryPreviewItem__meta__top___2BJiw01g { 
+    display: flex !important; 
+}
+
+.StoryPreviewItem__meta__top___2BJiw01g { 
+    display: block !important; 
+}
+
+span.story_name {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+span.story_name a.owner {
+    padding: 1px 3.25px 1.5px 3.25px !important;
+    color: white !important;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    margin-right: 3px;
+}
+
+span.story_name a.owner:before {
+    display: none !important;
+}
+
+.StoryPreviewItemButtons__container .state.button.reject {
+    display: none !important;
+}
+
+.backlog_stories_marker.item {
+    background-color: #334155 !important;
+    color: white !important;
+    text-shadow: none !important;
+    padding-bottom: 4px !important;
+}
+
+svg.selector {
+    margin-top: 5px !important;
+}
+
+/* Ticket Status */
+
+.release [data-aid*="StoryPreviewItem"] .story_name {
+    background-color: #0EA5E9 !important;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
 .dense [data-aid*="StoryPreviewItem"].status:after {
     display: none !important;
 }
@@ -76,51 +136,6 @@
 
 [data-aid="StoryPreviewItem__preview"].status.resolved:after {
     content: "RESOLVED";
-}
-
-[data-aid="CommentLayout"] span.tracker_markup {
-    color: #1F2937 !important;
-}
-
-header.preview {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-
-.dense .StoryPreviewItem__meta__top___2BJiw01g { 
-    display: flex !important; 
-}
-
-.StoryPreviewItem__meta__top___2BJiw01g { 
-    display: block !important; 
-}
-
-span.story_name {
-    font-size: 12px;
-    font-weight: bold;
-}
-
-span.story_name a.owner {
-    padding: 1px 3px 1px 3px !important;
-    color: white !important;
-    border-radius: 5px;
-    font-size: 10px;
-    text-align: center;
-}
-
-.StoryPreviewItemButtons__container .state.button.reject {
-    display: none !important;
-}
-
-.backlog_stories_marker.item {
-    background-color: #334155 !important;
-    color: white !important;
-    text-shadow: none !important;
-    padding-bottom: 4px !important;
-}
-
-svg.selector {
-    margin-top: 5px !important;
 }
 
 /* Ticket List Styles */
