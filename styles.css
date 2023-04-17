@@ -94,7 +94,7 @@ svg.selector {
 }
 
 [class*='StoryPreviewItemReviewList'] {
-    max-width: 235px !important;
+    max-width: 85% !important;
 }
 
 /* Ticket Status */
