@@ -140,6 +140,10 @@ const options = {
   'hideTicketSelectors': {
     style: '.selector { display: none !important; }',
     defaultChecked: false
+  },
+  'hideRejectButton': {
+    style: "[class*='StoryPreviewItemButtons'] .state.button.reject { display: none !important; }",
+    defaultChecked: true
   }
 };
 
@@ -148,6 +152,7 @@ function init() {
   displayTicketStatus();
   customStylingOptions('hideTicketSelectors', options['hideTicketSelectors'].defaultChecked, options['hideTicketSelectors'].style);
   customStylingOptions('dimUnstartedTickets', options['dimUnstartedTickets'].defaultChecked, options['dimUnstartedTickets'].style);
+  customStylingOptions('hideRejectButton', options['hideRejectButton'].defaultChecked, options['hideRejectButton'].style);
 }
 
 if (document.readyState === 'loading') {

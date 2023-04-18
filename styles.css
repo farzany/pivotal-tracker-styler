@@ -78,10 +78,6 @@ span.story_name a.owner:before {
     display: none !important;
 }
 
-.StoryPreviewItemButtons__container .state.button.reject {
-    display: none !important;
-}
-
 .backlog_stories_marker.item {
     background-color: #334155 !important;
     color: white !important;
@@ -160,9 +156,14 @@ label.show, label.hide, .done_bar a {
 
 span.StoryPreviewItemButtons__container span.state {
     display: flex !important;
-    flex-direction: column !important;
-    gap: 10px;
+    justify-content: end !important;
+    flex-wrap: wrap;
+    gap: 5px;
     padding-top: 5px;
+}
+
+span.StoryPreviewItemButtons__container {
+    max-width: 15%;
 }
 
 .items_container::-webkit-scrollbar {

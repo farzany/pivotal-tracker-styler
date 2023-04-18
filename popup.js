@@ -17,5 +17,6 @@ function setupToggle(toggleId, defaultValue = false) {
 document.addEventListener('DOMContentLoaded', () => {
   setupToggle('hideTicketSelectors');
   setupToggle('dimUnstartedTickets', true);
+  setupToggle('hideRejectButton', true);
   // Add more toggles by calling setupToggle with their respective IDs
 });
