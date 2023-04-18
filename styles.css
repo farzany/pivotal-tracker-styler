@@ -95,12 +95,25 @@ svg.selector {
 
 /* Ticket Status */
 
-.release [data-aid*="StoryPreviewItem"] .story_name {
-    background-color: #0EA5E9 !important;
-    color: white;
-    padding: 2px 4px;
-    border-radius: 3px;
-    margin-top: 5px;
+.story.release .preview.status {
+    background-color: #FEF9C3 !important;
+    color: #1F2937 !important;
+}
+
+.story.release .preview {
+    background-color: #FEF9C3 !important;
+    color: #1F2937 !important;
+    border-top: #1F2937 1px solid !important;
+    border-bottom: #1F2937 1px solid !important;
+}
+
+.story.release .preview  .story_name {
+    color: #1F2937 !important;
+}
+
+.story.release .preview  a.label {
+    color: #1F2937 !important;
+    font-weight: bold !important;
 }
 
 .dense [data-aid*="StoryPreviewItem"].status:after {
