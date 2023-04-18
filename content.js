@@ -51,60 +51,70 @@ function applyUniqueColorsForAuthors() {
 }
 
 function displayTicketStatus() {
-  const storyItems = document.querySelectorAll('.StoryPreviewItem__clickToExpand');
+  chrome.storage.local.get('displayTicketStatus', (result) => {
+    const displayTicketStatus = result['displayTicketStatus'] !== undefined ? result['displayTicketStatus'] : false;
 
-  storyItems.forEach(storyItem => {
-    const owner = storyItem.querySelector('.owner');
-    const reviewList = storyItem.querySelectorAll('[class^="StoryPreviewItemReviewList"]');
+    const storyItems = document.querySelectorAll('.StoryPreviewItem__clickToExpand');
 
-    let totalReviews = 0;
-    let approvedCodeReviewCount = 0;
-    let approvedQaReviewCount = 0;
+    storyItems.forEach(storyItem => {
+      const owner = storyItem.querySelector('.owner');
+      const reviewList = storyItem.querySelectorAll('[class^="StoryPreviewItemReviewList"]');
 
-    reviewList.forEach(review => {
-      const reviewSpans = Array.from(review.children).filter(child => child.tagName === 'SPAN');
+      let totalReviews = 0;
+      let approvedCodeReviewCount = 0;
+      let approvedQaReviewCount = 0;
 
-      reviewSpans.forEach(reviewSpan => {
-        const imgPassed = reviewSpan.querySelector('img[alt="Pass"]');
-        const span = reviewSpan.querySelector('span[data-aid="StoryPreviewItemReview__reviewType"]');
+      reviewList.forEach(review => {
+        const reviewSpans = Array.from(review.children).filter(child => child.tagName === 'SPAN');
 
-        totalReviews++;
+        reviewSpans.forEach(reviewSpan => {
+          const imgPassed = reviewSpan.querySelector('img[alt="Pass"]');
+          const span = reviewSpan.querySelector('span[data-aid="StoryPreviewItemReview__reviewType"]');
 
-        if (imgPassed) {
-          if (span.textContent === 'Code') {
-            approvedCodeReviewCount++;
-          } else if (span.textContent === 'Test (QA)') {
-            approvedQaReviewCount++;
+          totalReviews++;
+
+          if (imgPassed) {
+            if (span.textContent === 'Code') {
+              approvedCodeReviewCount++;
+            } else if (span.textContent === 'Test (QA)') {
+              approvedQaReviewCount++;
+            }
           }
-        }
+        });
       });
+
+      const header = storyItem.querySelector('header');
+      
+      if (displayTicketStatus) {
+        header.classList.add('status');
+      } else {
+        header.classList.remove('status');
+        return;
+      }
+
+      const parentDiv = header.parentElement;
+      const accepted = parentDiv.classList.contains('accepted');
+      const started = parentDiv.classList.contains('started');
+      const finished = parentDiv.classList.contains('finished');
+
+      if (accepted) {
+        header.classList.add('accepted');
+      } else if (totalReviews === 0) {
+        if (started || finished) {
+          header.classList.add('inProgress');
+        } else {
+          header.classList.add('unstarted');
+        }
+      } else if (approvedCodeReviewCount > 1) {
+        if (approvedQaReviewCount > 0) {
+          header.classList.add('resolved');
+        } else {
+          header.classList.add('acceptance');
+        }
+      } else {
+        header.classList.add('review');
+      }
     });
-
-    const header = storyItem.querySelector('header');
-    header.classList.add('status')
-
-    const parentDiv = header.parentElement;
-    const accepted = parentDiv.classList.contains('accepted');
-    const started = parentDiv.classList.contains('started');
-    const finished = parentDiv.classList.contains('finished');
-
-    if (accepted) {
-      header.classList.add('accepted');
-    } else if (totalReviews === 0) {
-      if (started || finished) {
-        header.classList.add('inProgress');
-      } else {
-        header.classList.add('unstarted');
-      }
-    } else if (approvedCodeReviewCount > 1) {
-      if (approvedQaReviewCount > 0) {
-        header.classList.add('resolved');
-      } else {
-        header.classList.add('acceptance');
-      }
-    } else {
-      header.classList.add('review');
-    }
   });
 }
 
@@ -170,6 +180,8 @@ chrome.storage.onChanged.addListener((changes, areaName) => {
         const defaultChecked = options[key].defaultChecked;
 
         customStylingOptions(key, defaultChecked, style);
+      } else if (key === 'displayTicketStatus') {
+        displayTicketStatus();
       }
     }
   }
