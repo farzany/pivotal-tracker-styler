@@ -90,11 +90,65 @@ svg.selector {
 }
 
 .status [class*='StoryPreviewItemReviewList'] {
-    max-width: 85% !important;
+    max-width: 90% !important;
 }
 
 .layouts.normal .story .preview.status .post.labels {
-    max-width: 85%;
+    max-width: 90% !important;
+}
+
+/* State Buttons */
+
+span.StoryPreviewItemButtons__container span.state {
+    display: flex !important;
+    justify-content: end !important;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-top: 5px;
+}
+
+.state.button.deliver {
+    background-color: #FB923C !important;
+    border-color: transparent !important;
+    /* border-color: #F97316 !important; */
+    color: white !important;
+} .state.button.deliver:hover {
+    background-color: #F97316 !important;
+}
+
+.state.button.finish {
+    background-color: #075985 !important;
+    border-color: transparent !important;
+    color: white !important;
+} .state.button.finish:hover {
+    background-color: #0a4161 !important;
+}
+
+.state.button.start {
+    background-color: #F3F4F6 !important;
+    border-color: #94A3B8 !important;
+} .state.button.start:hover {
+    background-color: #D1D5DB !important;
+}
+
+.state.button.accept {
+    background-color: #16A34A !important;
+    border-color: transparent !important;
+    color: white !important;
+} .state.button.accept:hover {
+    background-color: #15803D !important;
+}
+
+.state.button.reject {
+    background-color: #DC2626 !important;
+    border-color: transparent !important;
+    color: white !important;
+} .state.button.reject:hover {
+    background-color: #B91C1C !important;
+}
+
+.preview .reveal.button {
+    border-color: transparent !important;
 }
 
 /* Ticket Status */
@@ -174,14 +228,6 @@ label.show, label.hide, .done_bar a {
     background-image: none !important;
     background-color: #D1FAE5 !important;
     color: #1F2937 !important;
-}
-
-span.StoryPreviewItemButtons__container span.state {
-    display: flex !important;
-    justify-content: end !important;
-    flex-wrap: wrap;
-    gap: 5px;
-    padding-top: 5px;
 }
 
 span.StoryPreviewItemButtons__container {
