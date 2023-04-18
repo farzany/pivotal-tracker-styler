@@ -89,8 +89,12 @@ svg.selector {
     margin-top: 5px !important;
 }
 
-[class*='StoryPreviewItemReviewList'] {
+.status [class*='StoryPreviewItemReviewList'] {
     max-width: 85% !important;
+}
+
+.layouts.normal .story .preview.status .post.labels {
+    max-width: 85%;
 }
 
 /* Ticket Status */
