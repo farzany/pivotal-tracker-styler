@@ -155,6 +155,11 @@ svg.selector {
     content: "RESOLVED";
 }
 
+.unscheduled [data-aid="StoryPreviewItem__preview"] {
+    background-color: #E0F2FE !important;
+    color: #1F2937 !important;
+}
+
 /* Ticket List Styles */
 
 .layouts .story .preview .parens:before, .layouts .story .preview .parens:after {
