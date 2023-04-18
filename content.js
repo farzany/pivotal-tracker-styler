@@ -86,11 +86,12 @@ function displayTicketStatus() {
     const parentDiv = header.parentElement;
     const accepted = parentDiv.classList.contains('accepted');
     const started = parentDiv.classList.contains('started');
+    const finished = parentDiv.classList.contains('finished');
 
     if (accepted) {
       header.classList.add('accepted');
     } else if (totalReviews === 0) {
-      if (owner || started) {
+      if (started || finished) {
         header.classList.add('inProgress');
       } else {
         header.classList.add('unstarted');
@@ -131,7 +132,7 @@ function customStylingOptions(toggleId, defaultValue, style) {
 
 const options = {
   'dimUnstartedTickets': {
-    style: `[data-aid="StoryPreviewItem__preview"].status.unstarted {
+    style: `.unstarted [data-aid="StoryPreviewItem__preview"] {
       background-color: #E2E8F0 !important;
       color: #475569 !important;
     }`,
