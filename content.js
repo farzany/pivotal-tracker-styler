@@ -118,6 +118,12 @@ function displayTicketStatus() {
   });
 }
 
+function applyPriorityClasses() {
+  document.querySelectorAll('button.priority').forEach((element) => {
+    element.classList.add(element.textContent.trim().toLowerCase());
+  });
+}
+
 function customStylingOptions(toggleId, defaultValue, style) {
   chrome.storage.local.get(toggleId, (result) => {
     const toggled = result[toggleId] !== undefined ? result[toggleId] : defaultValue;
@@ -161,6 +167,7 @@ const options = {
 function init() {
   applyUniqueColorsForAuthors();
   displayTicketStatus();
+  applyPriorityClasses();
   customStylingOptions('hideTicketSelectors', options['hideTicketSelectors'].defaultChecked, options['hideTicketSelectors'].style);
   customStylingOptions('dimUnstartedTickets', options['dimUnstartedTickets'].defaultChecked, options['dimUnstartedTickets'].style);
   customStylingOptions('hideRejectButton', options['hideRejectButton'].defaultChecked, options['hideRejectButton'].style);
@@ -191,6 +198,7 @@ chrome.storage.onChanged.addListener((changes, areaName) => {
 const observer = new MutationObserver(debounce(() => {
   applyUniqueColorsForAuthors();
   displayTicketStatus();
+  applyPriorityClasses();
 }, 500));
 
 observer.observe(document.body, {

@@ -97,6 +97,18 @@ svg.selector {
     max-width: 90% !important;
 }
 
+/* Priority */
+
+button.priority.p2 {
+    background-color: #FDE047!important;
+    color: #171717;
+    border-color: #EAB308;
+} button.priority.p1 {
+    background-color: #EF4444!important;
+    color: white;
+    border-color: #DC2626;
+}
+
 /* State Buttons */
 
 span.StoryPreviewItemButtons__container {
