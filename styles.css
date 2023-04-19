@@ -99,11 +99,11 @@ svg.selector {
 
 /* Priority */
 
-button.priority.p2 {
+.p2 button.priority {
     background-color: #FEF08A !important;
     color: #171717;
     border-color: #EAB308;
-} button.priority.p1 {
+} .p1 button.priority {
     background-color: #EF4444 !important;
     color: white;
     border-color: #DC2626;
