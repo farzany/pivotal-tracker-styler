@@ -106,7 +106,6 @@ span.StoryPreviewItemButtons__container {
 .state.button.deliver {
     background-color: #FB923C !important;
     border-color: transparent !important;
-    /* border-color: #F97316 !important; */
     color: white !important;
 } .state.button.deliver:hover {
     background-color: #F97316 !important;
@@ -282,6 +281,32 @@ section.edit{
     font-family: 'Consolas';
 }
 
+.actions button,
+.actions input {
+    background-color: #F8FAFC !important;
+    border-color: #94A3B8 !important;
+    color: #334155 !important;
+}
+
+.actions button:hover,
+.actions input:hover {
+    background-color: #E2E8F0 !important;
+    border-color: #64748B !important;
+    color: #334155 !important;
+}
+
+.actions button.link, .actions button.clone_story {
+    border-radius: 5px 0 0 5px !important;
+} .actions input.id, .actions button.delete {
+    border-radius: 0 5px 5px 0 !important;
+} .actions input.id {
+    padding-bottom: 1.5px !important;
+}
+
+.controls .close {
+    border-radius: 5px !important;
+}
+
 /* Ticket Details - State and Info Box Styles */
 
 .story.state_box,
@@ -319,6 +344,10 @@ section.edit{
     border-radius: 0 0 5px 5px !important;
 } .story.info_box .timestamp .timestamp_row {
     color: #334155 !important;
+}
+
+.story.state_box .state.row {
+    height: 30px !important;
 }
 
 /* General Page Layout Styles */
