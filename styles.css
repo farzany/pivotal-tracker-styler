@@ -282,6 +282,45 @@ section.edit{
     font-family: 'Consolas';
 }
 
+/* Ticket Details - State and Info Box Styles */
+
+.story.state_box,
+.story.state_box .state.row,
+.story.state_box [class*="ReviewEdit__container"] {
+    border-color: #94A3B8 !important;
+    color: #334155 !important;
+    border-radius: 5px !important;
+} .story.state_box [data-aid="Reviews"] {
+    border-color: #94A3B8 !important;
+    color: #334155 !important;
+    border-radius: 0 0 5px 5px !important;  
+}
+
+.story.state_box .state.row,
+.story.state_box [class*="Reviews__controls"],
+.story.state_box [class*="Reviews__label"],
+.story.state_box [class*="ReviewEdit__container"] {
+    background-color: #F8FAFC !important;
+    border-color: #94A3B8 !important;
+    color: #334155 !important;
+}
+
+.story.info_box, .story.info_box .row.type {
+    border-color: #94A3B8 !important;
+    color: #334155 !important;
+    border-radius: 5px !important;
+} .story.info_box .row {
+    background-color: #F8FAFC !important;
+    color: #334155 !important;
+    border-color: #94A3B8 !important;
+} .story.info_box .row em, .story.state_box .state.row em{
+    color: #334155 !important;
+} .story.info_box .row.timestamp_wrapper {
+    border-radius: 0 0 5px 5px !important;
+} .story.info_box .timestamp .timestamp_row {
+    color: #334155 !important;
+}
+
 /* General Page Layout Styles */
 
 .sidebar.expanded {
