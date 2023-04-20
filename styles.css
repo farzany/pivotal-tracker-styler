@@ -139,10 +139,10 @@ span.StoryPreviewItemButtons__container {
     background-color: #0a4161 !important;
 }
 
-.state.button.start {
+.state.button.start, .state.button.restart  {
     background-color: #F3F4F6 !important;
     border-color: #94A3B8 !important;
-} .state.button.start:hover {
+} .state.button.start:hover, .state.button.restart:hover {
     background-color: #D1D5DB !important;
 }
 
@@ -164,6 +164,8 @@ span.StoryPreviewItemButtons__container {
 
 .preview .reveal.button {
     border-color: transparent !important;
+} .preview .reveal.story.button {
+    margin-top: 5.6px !important;
 }
 
 /* Ticket Status */
