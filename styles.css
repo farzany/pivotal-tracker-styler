@@ -449,6 +449,18 @@ div.story.accepted header.preview {
 
 /* Zendesk Styles */
 
+.integration_header header.preview {
+    background-color: #3B82F6 !important;
+    color: white !important;
+    padding: 2.5px 9px !important;
+    border: none !important;
+    font-weight: normal !important;
+} .integration p.message {
+    background-color: #E2E8F0 !important;
+    color: #334155 !important;
+    border: none !important;
+}
+
 .integration_zendesk header.preview {
     padding: 10px 5px !important;
 } .integration_zendesk header.preview aside {
