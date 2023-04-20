@@ -51,10 +51,6 @@
     min-height: 60px;
 }
 
-[data-aid="CommentLayout"] span.tracker_markup {
-    color: #1F2937 !important;
-}
-
 header.preview {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
@@ -284,12 +280,19 @@ div[class*="BlockerEdit"] button[data-aid*="cancelButton"]:hover {
 
 .tracker_markup code {
     font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace !important;
-    background-color: #e5e7eb !important;
-    padding: 2px 4px !important;
-    border-radius: 5px !important;
+    background-color: #091E4214 !important;
+    padding: 2px 3.5px !important;
+    border-radius: 3px !important;
     font-size: .9em !important;
-    color: #1F2937 !important;
+    color: #172B4D !important;
     border: none !important;
+} .tracker_markup p {
+    color: #172B4D !important;
+    line-height: 1.714 !important;
+}
+
+.story.description [class*="DescriptionShow"] {
+    border-radius: 5px !important;
 }
 
 section.edit{
