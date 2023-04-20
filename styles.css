@@ -278,7 +278,15 @@ div[class*="BlockerEdit"] button[data-aid*="cancelButton"]:hover {
     background-color: #64748B !important;
 }
 
-.tracker_markup code {
+[data-aid="CommentLayout"] span.tracker_markup {
+    color: #1F2937 !important;
+}
+
+form.story.model {
+    padding-top: 8px !important;
+}
+
+.tracker_markup p code {
     font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace !important;
     background-color: #091E4214 !important;
     padding: 2px 3.5px !important;
@@ -287,7 +295,7 @@ div[class*="BlockerEdit"] button[data-aid*="cancelButton"]:hover {
     color: #172B4D !important;
     border: none !important;
 } .tracker_markup p {
-    color: #172B4D !important;
+    color: #1F2937 !important;
     line-height: 1.714 !important;
 }
 
