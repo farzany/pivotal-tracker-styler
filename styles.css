@@ -446,3 +446,19 @@ div.story.accepted header.preview {
     padding: 0 0 5px 0 !important;
     color: #1F2937 !important;
 }
+
+/* Zendesk Styles */
+
+.integration_zendesk header.preview {
+    padding: 10px 5px !important;
+} .integration_zendesk header.preview aside {
+    border-radius: 5px !important;
+    margin: 5px 4px 0 !important;
+    padding: 4px 5px !important;
+    background-color: #E2E8F0 !important;
+} .integration_zendesk header.preview aside strong {
+    color: #334155 !important;
+    text-transform: uppercase;
+} .integration_zendesk header.preview aside span.id {
+    color: #94A3B8 !important;
+}
