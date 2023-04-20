@@ -19,6 +19,14 @@
 
 [data-aid="AddButton"] {
     color: #1F2937 !important;
+    margin-top: 1px !important;
+} [data-aid="AddButton"]:hover {
+    background-color: #3B82F6 !important;
+    color: white !important;
+} [data-aid="AddButton"]:active {
+    background-color: #1D4ED8 !important;
+} [data-aid="AddButton"] span span {
+    margin-top: 1px !important;
 }
 
 [data-aid="IterationMarker"] {
