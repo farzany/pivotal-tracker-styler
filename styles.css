@@ -282,6 +282,16 @@ div[class*="BlockerEdit"] button[data-aid*="cancelButton"]:hover {
     background-color: #64748B !important;
 }
 
+.tracker_markup code {
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace !important;
+    background-color: #e5e7eb !important;
+    padding: 2px 4px !important;
+    border-radius: 5px !important;
+    font-size: .9em !important;
+    color: #1F2937 !important;
+    border: none !important;
+}
+
 section.edit{
     background-color: white !important;
     padding-left: 0 !important;
