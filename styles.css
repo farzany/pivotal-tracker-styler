@@ -353,6 +353,7 @@ section.edit{
     padding: 8px 10px !important;
     background-color: #091E4214 !important;
     border: none !important;
+    border-radius: 3px !important;
 }
 
 .tracker_markup pre code {
@@ -381,6 +382,18 @@ pre code .line::before {
     text-align: right;
     font-size: 1em;
     color: #505F79;
+}
+
+pre::-webkit-scrollbar {
+    height: 5px !important;
+}
+
+pre::-webkit-scrollbar-track {
+    background-color: #091E4214 !important;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background-color: #D1D5DB !important;
 }
 
 /* Ticket Details - State and Info Box Styles */
