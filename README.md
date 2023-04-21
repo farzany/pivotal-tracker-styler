@@ -17,6 +17,7 @@ Pivotal Tracker Styler is a Chrome extension that enhances the look and feel of 
 ## Features
 - Enhanced background and text colors for better text readability
 - Color-coded ticket-owner labels for easy identification
+- Better inline code and code block styling with line numbers
 - Expanded ticket details and comments section
 - Streamlined ticket actions for efficiency
 - Clear ticket status displayed as gray text (excluding unstarted tickets)
@@ -28,6 +29,6 @@ Pivotal Tracker Styler is a Chrome extension that enhances the look and feel of 
 ## Screenshots
 <img width="1663" alt="image" src="https://user-images.githubusercontent.com/59945358/232195307-cb29ec96-64f4-4c3c-8517-47586d0ac1a4.png">
 <img width="1667" alt="image" src="https://user-images.githubusercontent.com/59945358/232195573-92739506-2ea1-49fb-8cbf-deb4764d589b.png">
-<img width="1666" alt="image" src="https://user-images.githubusercontent.com/59945358/232196360-3793c01a-425b-4a60-8860-f5b278654639.png">
+<img width="750" alt="image" src="https://user-images.githubusercontent.com/59945358/233512578-8bd896c7-4fbb-41f1-a0ae-289c64f97a31.png">
 <img width="298" alt="image" src="https://user-images.githubusercontent.com/59945358/232196383-e2984d99-a7fb-4c19-a02d-a72985ca51fa.png">
 
