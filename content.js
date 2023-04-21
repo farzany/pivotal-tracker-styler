@@ -118,6 +118,24 @@ function displayTicketStatus() {
   });
 }
 
+function addCodeBlockLineNumbers() {
+  const codeBlocks = document.querySelectorAll('pre code');
+
+  codeBlocks.forEach((block) => {
+    const alreadyNumbered = block.querySelector('.line');
+
+    if (!alreadyNumbered) {
+      const content = block.innerHTML.trim();
+      const lines = content.split('\n');
+      const wrappedLines = lines.map((line) => {
+        const lineContent = line.trim() === '' ? '&nbsp;' : line;
+        return `<span class="line">${lineContent}</span>`;
+      });
+      block.innerHTML = wrappedLines.join('');
+    }
+  });
+}
+
 function customStylingOptions(toggleId, defaultValue, style) {
   chrome.storage.local.get(toggleId, (result) => {
     const toggled = result[toggleId] !== undefined ? result[toggleId] : defaultValue;
@@ -161,6 +179,7 @@ const options = {
 function init() {
   applyUniqueColorsForAuthors();
   displayTicketStatus();
+  addCodeBlockLineNumbers();
   customStylingOptions('hideTicketSelectors', options['hideTicketSelectors'].defaultChecked, options['hideTicketSelectors'].style);
   customStylingOptions('dimUnstartedTickets', options['dimUnstartedTickets'].defaultChecked, options['dimUnstartedTickets'].style);
   customStylingOptions('hideRejectButton', options['hideRejectButton'].defaultChecked, options['hideRejectButton'].style);
@@ -191,6 +210,7 @@ chrome.storage.onChanged.addListener((changes, areaName) => {
 const observer = new MutationObserver(debounce(() => {
   applyUniqueColorsForAuthors();
   displayTicketStatus();
+  addCodeBlockLineNumbers();
 }, 500));
 
 observer.observe(document.body, {

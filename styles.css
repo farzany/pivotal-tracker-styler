@@ -286,19 +286,6 @@ form.story.model {
     padding-top: 8px !important;
 }
 
-.tracker_markup p code {
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace !important;
-    background-color: #091E4214 !important;
-    padding: 2px 3.5px !important;
-    border-radius: 3px !important;
-    font-size: .9em !important;
-    color: #172B4D !important;
-    border: none !important;
-} .tracker_markup p {
-    color: #1F2937 !important;
-    line-height: 1.714 !important;
-}
-
 .story.description [class*="DescriptionShow"] {
     border-radius: 5px !important;
 }
@@ -348,6 +335,52 @@ section.edit{
 
 .controls .close {
     border-radius: 5px !important;
+}
+
+/* Code Blocks & Lines Styles */
+
+.tracker_markup code {
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace !important;
+    background-color: #091E4214 !important;
+    padding: 2px 3.5px !important;
+    border-radius: 3px !important;
+    font-size: .9em !important;
+    color: #172B4D !important;
+    border: none !important;
+}
+
+.tracker_markup pre {
+    padding: 8px 10px !important;
+    background-color: #091E4214 !important;
+    border: none !important;
+}
+
+.tracker_markup pre code {
+    background-color: transparent !important;
+    padding: 0 !important;
+}
+
+.tracker_markup p {
+    color: #1F2937 !important;
+    line-height: 1.714 !important;
+}
+
+pre code .line {
+    counter-increment: line;
+    position: relative;
+    display: block;
+    padding: 0.5px 0 0.5px 30px;
+}
+
+pre code .line::before {
+    content: counter(line);
+    position: absolute;
+    left: 0;
+    padding-right: 10px;
+    border-right: 1px solid #D1D5DB;
+    text-align: right;
+    font-size: 1em;
+    color: #505F79;
 }
 
 /* Ticket Details - State and Info Box Styles */
