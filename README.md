@@ -1,5 +1,5 @@
 # Pivotal Tracker Styler ✨
-Pivotal Tracker Styler is a Chrome extension that enhances the look and feel of Pivotal Tracker, making it more enjoyable and visually appealing. If you've ever used Pivotal, you know it the UI is lacking pizazz - that's where this extension comes in!
+Pivotal Tracker Styler is a Chrome extension that enhances the look and feel of Pivotal Tracker, making it more enjoyable and visually appealing. If you've ever used Pivotal, you know that the UI is lacking pizazz - that's where this extension comes in!
 
 [Now Available on the Chrome Web Store](https://chrome.google.com/webstore/detail/pivotal-tracker-styler/mcbdmjomdgjhpefpjocmpfgbabbddlpl)
 
