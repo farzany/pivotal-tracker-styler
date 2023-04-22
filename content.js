@@ -10,9 +10,10 @@ function debounce(func, wait) {
   };
 }
 
+const authorsColorMap = {};
+
 function applyUniqueColorsForAuthors() {
   const ownerElements = document.querySelectorAll('.owner');
-  const colorMap = {};
 
   function getColor(title) {
     const colors = [
@@ -27,11 +28,11 @@ function applyUniqueColorsForAuthors() {
       // Add more colors if needed
     ];
 
-    if (!colorMap[title]) {
-      colorMap[title] = colors[Object.keys(colorMap).length % colors.length];
+    if (!authorsColorMap[title]) {
+      authorsColorMap[title] = colors[Object.keys(authorsColorMap).length % colors.length];
     }
 
-    return colorMap[title];
+    return authorsColorMap[title];
   }
 
   ownerElements.forEach((element) => {
@@ -206,14 +207,21 @@ chrome.storage.onChanged.addListener((changes, areaName) => {
   }
 });
 
-// If the page uses a dynamic framework, listen for changes to the DOM and apply unique background colors again
-const observer = new MutationObserver(debounce(() => {
+const fastObserver = new MutationObserver(debounce(() => {
   applyUniqueColorsForAuthors();
   displayTicketStatus();
+}, 100));
+
+const slowObserver = new MutationObserver(debounce(() => {
   addCodeBlockLineNumbers();
 }, 500));
 
-observer.observe(document.body, {
+fastObserver.observe(document.body, {
+  childList: true,
+  subtree: true
+});
+
+slowObserver.observe(document.body, {
   childList: true,
   subtree: true
 });
