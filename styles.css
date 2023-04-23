@@ -554,3 +554,11 @@ div.story.accepted header.preview {
 } .integration_zendesk header.preview .requested_by {
     padding-top: 1px !important;
 }
+
+/* Labels Styles */
+
+div.labels [class*="labelItem"] {
+    background-color: white !important;
+} div.labels div.items {
+    background-color: white !important;
+}
