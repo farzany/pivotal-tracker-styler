@@ -250,6 +250,7 @@ label.show, label.hide, .done_bar a {
     background-image: none !important;
     background-color: #D1FAE5 !important;
     color: #1F2937 !important;
+    text-transform: capitalize !important;
 } .done_bar {
     border: none !important;
 }
@@ -561,4 +562,42 @@ div.labels [class*="labelItem"] {
     background-color: white !important;
 } div.labels div.items {
     background-color: white !important;
+}
+
+/* Project History Styles */
+
+.project_history .items .item .preview {
+    padding: 10px 10px 5px 10px !important;
+    border-top: none !important;
+    border-bottom: 1px solid #1F2937 !important;
+}
+
+.project_history .items .item .preview .group {
+    border-radius: 5px !important;
+    margin: 0 0 6px 0 !important;
+    padding: 7px 6px !important;
+    background-color: #E2E8F0 !important;
+}
+
+.project_history .items .item .preview .reveal.story.button {
+    margin: -4.5px 0 0 0 !important;
+}
+
+.project_history .items .item .preview .occurred_at {
+    margin-top: 2.5px !important;
+}
+
+.project_history .items .item .preview .box > .icons:empty {
+    display: none !important;
+}
+
+.project_history .item.activity_entry_group {
+    border-top: none !important;
+}
+
+.project_history .show_more_history {
+    background-image: none !important;
+    background-color: #D6D3D1 !important;
+    color: #1F2937 !important;
+    text-transform: capitalize !important;
 }
