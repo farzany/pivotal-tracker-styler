@@ -404,6 +404,11 @@ section.edit{
     border-radius: 5px !important;
 }
 
+section.edit .controls .bubble {
+    border-radius: 5px !important;
+    background-color: #16A34A !important;
+}
+
 /* Code Blocks & Lines Styles */
 
 .tracker_markup code {
