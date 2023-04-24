@@ -9,6 +9,61 @@
 
 [data-aid="PageHeader"] {
     background-color: #334155 !important;
+    padding-top: 2px !important;
+}
+
+[data-aid="NotificationsBell__unreadCounter"] {
+    background-color: #B91C1C !important;
+}
+
+.tc_projects_dropdown_link.tc_context_name {
+    padding-bottom: 4px !important;
+}
+
+/* Sidebar Styles */
+
+aside.sidebar {
+    background-color: #27272A;
+    border-right: none !important;
+}
+
+aside.sidebar .toggle_sidebar {
+    width: 100% !important;
+}
+
+[class*="Sidebar__toggleContainer"],
+[class*="Sidebar__panels"],
+[class*="SidebarFooter"] {
+    background-color: #27272A;
+}
+
+aside.sidebar div,
+aside.sidebar ul,
+aside.sidebar li,
+aside.sidebar svg {
+    color: #D1D5DB !important;
+    text-shadow: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    border-top: none !important;
+}
+
+[class*="SidebarFooter__widthControls"] {
+    margin: 0 0 0 -1px !important;
+} .expanded [class*="SidebarFooter__widthControls"] {
+    margin: 2px 0 !important;
+}
+
+aside.sidebar .Mui-selected,
+aside.sidebar .Mui-selected + div,
+aside.sidebar .Mui-selected div,
+aside.sidebar .Mui-selected svg {
+    color: #7DD3FC !important;
+    border-left-color: #7DD3FC !important;
+}
+
+section.panels .table.no_panels_visible:before {
+    color: #D1D5DB !important;
 }
 
 /* Ticket Layout Styles */
