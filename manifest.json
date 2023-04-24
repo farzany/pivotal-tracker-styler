@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Pivotal Tracker Styler",
-  "version": "1.14",
+  "version": "1.15",
   "description": "Pivotal Tracker Styler enhances the look and feel of Pivotal Tracker, making it more enjoyable and visually appealing.",
   "icons": {
     "32": "icons/icon-32x32.png",
