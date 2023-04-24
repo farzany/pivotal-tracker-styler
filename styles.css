@@ -23,7 +23,7 @@
 /* Sidebar Styles */
 
 aside.sidebar {
-    background-color: #27272A;
+    background-color: #27272A !important;
     border-right: none !important;
 }
 
@@ -34,7 +34,7 @@ aside.sidebar .toggle_sidebar {
 [class*="Sidebar__toggleContainer"],
 [class*="Sidebar__panels"],
 [class*="SidebarFooter"] {
-    background-color: #27272A;
+    background-color: #27272A !important;
 }
 
 aside.sidebar div,
