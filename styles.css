@@ -357,6 +357,10 @@ form.story.model {
     padding: 0 2px !important;
 }
 
+.story.description textarea[data-aid="name"] {
+    color: #1F2937 !important;
+}
+
 .story.description [class*="DescriptionShow"] {
     border-radius: 5px !important;
 }
