@@ -532,8 +532,8 @@ pre::-webkit-scrollbar-thumb {
     color: #334155 !important;
 }
 
-.story.not_collapsed .info_box_wrapper .state_box .row .state.button {
-    margin: 0px 10px 0 0;
+.info_box_wrapper .state_box .row .state.button {
+    margin: 0px 10px 0 0 !important;
 }
 
 .story .info_box_wrapper {
