@@ -340,6 +340,7 @@ div[class*="AddSubresourceButton"], div[class*="TaskEdit"], div[class*="BlockerE
 
 div[data-aid="BlockerShow"] {
     background-color: #E2E8F0 !important;
+    border-color: #94A3B8 !important;
 } div[data-aid="BlockerShow"] span.tracker_markup p {
     color: #1F2937 !important;
 }
