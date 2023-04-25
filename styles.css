@@ -338,6 +338,19 @@ div[class*="AddSubresourceButton"], div[class*="TaskEdit"], div[class*="BlockerE
     color: #64748B !important;
 }
 
+div[data-aid="BlockerShow"] {
+    background-color: #E2E8F0 !important;
+} div[data-aid="BlockerShow"] span.tracker_markup p {
+    color: #1F2937 !important;
+}
+
+div[data-aid="BlockerShow"] [class*="BlockerShow__controls"] {
+    margin: 3px 2px 2px 3px !important;
+} div[data-aid="BlockerShow"] [class*="BlockerShow__controls"] button {
+    background-color: white !important;
+    border-color: #334155 !important;
+}
+
 div[class*="BlockerEdit"] button[data-aid*="cancelButton"] {
     background-color: white !important;
 }
@@ -496,6 +509,10 @@ pre::-webkit-scrollbar-thumb {
     background-color: #F8FAFC !important;
     border-color: #94A3B8 !important;
     color: #334155 !important;
+}
+
+.story.state_box [class*="Reviews__controls"] {
+    border-radius: 5px !important;
 }
 
 .story.info_box, .story.info_box .row.type {
