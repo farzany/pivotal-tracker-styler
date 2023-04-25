@@ -362,28 +362,6 @@ section.edit{
     padding-left: 0 !important;
 }
 
-.story .info_box_wrapper {
-    display: flex !important;
-    margin-left: -5px !important;
-    margin-right: -5px !important;
-}
-
-.story.state_box {
-    flex: 1 !important;
-    min-width: 225px;
-    box-sizing: border-box !important;
-    margin-left: 5px !important;
-    margin-right: 5px !important;
-}
-
-.story.info_box {
-    flex: 1 !important;
-    min-width: 225px;
-    box-sizing: border-box !important;
-    margin-left: 5px !important;
-    margin-right: 5px !important;
-}
-
 section.maximized .story.model .wrapper {
     padding-top: 8px !important;
 }
@@ -530,6 +508,28 @@ pre::-webkit-scrollbar-thumb {
 
 .story.not_collapsed .info_box_wrapper .state_box .row .state.button {
     margin: 0px 10px 0 0;
+}
+
+.story .info_box_wrapper {
+    display: flex !important;
+    margin-left: -5px !important;
+    margin-right: -5px !important;
+}
+
+.story.state_box {
+    flex: 1 !important;
+    min-width: 225px;
+    box-sizing: border-box !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+
+.story.info_box {
+    flex: 1 !important;
+    min-width: 225px;
+    box-sizing: border-box !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
 }
 
 /* General Page Layout Styles */
