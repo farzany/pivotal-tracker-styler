@@ -362,13 +362,34 @@ section.edit{
     padding-left: 0 !important;
 }
 
+.story .info_box_wrapper {
+    display: flex !important;
+    margin-left: -5px !important;
+    margin-right: -5px !important;
+}
+
 .story.state_box {
-    width: 100% !important;
+    flex: 1 !important;
+    min-width: 225px;
+    box-sizing: border-box !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
 }
 
 .story.info_box {
-    width: 100% !important;
-    margin-right: 0 !important;
+    flex: 1 !important;
+    min-width: 225px;
+    box-sizing: border-box !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+
+section.maximized .story.model .wrapper {
+    padding-top: 8px !important;
+}
+
+section.maximized [data-aid="StoryDetailsEdit"] {
+    padding-left: 9px !important;
 }
 
 .inline-code {
@@ -507,8 +528,8 @@ pre::-webkit-scrollbar-thumb {
     color: #334155 !important;
 }
 
-.story.state_box .state.row {
-    height: 30px !important;
+.story.not_collapsed .info_box_wrapper .state_box .row .state.button {
+    margin: 0px 10px 0 0;
 }
 
 /* General Page Layout Styles */
