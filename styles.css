@@ -353,6 +353,10 @@ form.story.model {
     padding-top: 8px !important;
 }
 
+.story section.activity {
+    padding: 0 2px !important;
+}
+
 .story.description [class*="DescriptionShow"] {
     border-radius: 5px !important;
 }
