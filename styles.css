@@ -690,3 +690,35 @@ div.labels [class*="labelItem"] {
     color: #1F2937 !important;
     text-transform: capitalize !important;
 }
+
+/* Story Flyover Styles */
+
+.story_flyover.flyover {
+    background-color: white !important;
+    border-radius: 5px !important;
+    border: 2px solid #3F3F46 !important;
+}
+
+.story_flyover.flyover footer {
+    background-color: #E2E8F0 !important;
+    color: #334155 !important;
+    border-radius: 0 0 5px 5px !important;
+}
+
+.story_flyover.flyover .title {
+    background-color: #3F3F46 !important;
+}
+
+.story_flyover.flyover hgroup.details {
+    background-color: white !important;
+    border: 0 !important;
+}
+
+.story_flyover.flyover section.description {
+    padding-top: 10px !important;
+}
+
+.story_flyover.flyover div::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
