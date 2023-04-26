@@ -430,6 +430,27 @@ section.edit .controls .bubble {
     background-color: #16A34A !important;
 }
 
+/* Reactions Styles */
+
+[data-aid="ReactionBar"] div[class*="ReactionPill"] span {
+    height: 20px;
+    width: 37px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+[data-aid="ReactionBar"] div[class*="ReactionPill"] span::before {
+    font-size: 15px !important;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 2px 0 0 !important;
+}
+
 /* Code Blocks & Lines Styles */
 
 .tracker_markup code {
