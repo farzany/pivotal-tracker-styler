@@ -432,6 +432,10 @@ section.edit .controls .bubble {
 
 /* Reactions Styles */
 
+[data-aid="ReactionBar"] {
+    width: fit-content !important;
+}
+
 [data-aid="ReactionBar"] div[class*="ReactionPill"] span {
     height: 20px;
     width: 37px;
