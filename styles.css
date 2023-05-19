@@ -177,6 +177,21 @@ svg.selector {
     border-color: #DC2626;
 }
 
+/* Blockers */
+
+[data-aid="StoryPreviewBlocker"],
+[data-aid="StoryPreviewComboBlocker"],
+[data-aid="StoryPreviewBlocking"] {
+    position: relative !important;
+    top: 19px !important;
+}
+
+.dense [data-aid="StoryPreviewBlocker"], 
+.dense [data-aid="StoryPreviewComboBlocker"], 
+.dense [data-aid="StoryPreviewBlocking"] {
+    position: inherit !important;
+}
+
 /* State Buttons */
 
 span.StoryPreviewItemButtons__container {
