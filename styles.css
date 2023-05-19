@@ -788,3 +788,12 @@ div.labels [class*="labelItem"] {
 } .flyover.followers_flyover div {
     border-radius: 5px !important;
 }
+
+/* Empty States */
+
+.panel .empty_message.backlog {
+    margin-top: -10px !important;
+    background-color: white !important;
+    color: #1F2937 !important;
+    border-radius: 0 0 10px 10px !important;
+}
