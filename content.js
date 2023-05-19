@@ -13,8 +13,13 @@ function debounce(func, wait) {
 const authorsColorMap = {};
 
 function applyUniqueColorsForAuthors() {
-  const ownerElements = document.querySelectorAll('.owner');
-
+  const ownerElements = Array.from(document.querySelectorAll('.owner'));
+  
+  const authors = ownerElements
+    .map((element) => element.getAttribute('title'))
+    .filter((value, index, self) => self.indexOf(value) === index)
+    .sort();
+  
   function getColor(title) {
     const colors = [
       '#0EA5E9',
@@ -27,11 +32,13 @@ function applyUniqueColorsForAuthors() {
       // Add more colors if needed
     ];
 
-    if (!authorsColorMap[title]) {
-      authorsColorMap[title] = colors[Object.keys(authorsColorMap).length % colors.length];
+    const index = authors.indexOf(title);
+
+    if (index === -1) {
+      return colors[6]; // default color
     }
 
-    return authorsColorMap[title];
+    return colors[index % colors.length];
   }
 
   ownerElements.forEach((element) => {
