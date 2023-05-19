@@ -583,6 +583,11 @@ pre::-webkit-scrollbar-thumb {
     margin-right: 5px !important;
 }
 
+.StoryPillLink[class*="accepted"] {
+    background-color: #D1FAE5 !important;
+    color: darkgreen !important;
+}
+
 /* General Page Layout Styles */
 
 .sidebar.expanded {
@@ -764,4 +769,22 @@ div.labels [class*="labelItem"] {
 .story_flyover.flyover div::-webkit-scrollbar {
     width: 5px;
     height: 5px;
+}
+
+.flyover.followers_flyover header .title {
+    text-shadow: none !important;
+    background-color: #16A34A !important;
+    border-radius: 4px 4px 0 0 !important;
+}
+
+.flyover.followers_flyover .window {
+    background-color: white !important;
+    border-radius: 0 0 5px 5px !important;
+}
+
+.flyover.followers_flyover {
+    border-radius: 5px !important;
+    border: 1px solid #3F3F46 !important;
+} .flyover.followers_flyover div {
+    border-radius: 5px !important;
 }
