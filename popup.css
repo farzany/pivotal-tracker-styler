@@ -4,7 +4,7 @@ body {
 }
 
 .popup-container {
-    width: 300px;
+    width: 400px;
     padding: 20px;
     box-sizing: border-box;
     background-color: white;
@@ -26,41 +26,57 @@ div.description .popup-description {
     color: #1F2937;
 }
 
+div.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .popup-author {
-    padding: 4px 8px;
+    padding: 5px 0;
+    width: 100% !important;
+    text-align: center;
     border-radius: 5px;
     font-size: 16px;
     color: white;
+    background-color: #334155;
     text-decoration: none;
-    background-color: #3B82F6;
 }
 
 /* Options Styles */
 
-div.options {
-    padding-bottom: 20px;
-    font-size: 16px;
-    color: #1F2937;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-div.option {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-div.options h2 {
+h2.options {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 18px;
     color: #1F2937;
 }
 
+div.options {
+    padding-bottom: 20px;
+    font-size: 16px;
+    color: #1F2937;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
 .toggle-switch input {
-    width: 15px;
-    height: 15px;
-    margin-left: 0;
+    display: none;
+}
+
+.toggle-switch label {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: none;
+    border: 2px solid #3B82F6;
+    color: #3B82F6;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.toggle-switch input:checked + label {
+    background-color: #3B82F6;
+    color: #ffffff;
 }

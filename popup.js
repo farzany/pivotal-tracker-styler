@@ -19,5 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupToggle('dimUnstartedTickets', true);
   setupToggle('hideRejectButton', true);
   setupToggle('displayTicketStatus');
+  setupToggle('displaySprintRemainder');
   // Add more toggles by calling setupToggle with their respective IDs
 });

@@ -143,6 +143,38 @@ function addCodeBlockLineNumbers() {
   });
 }
 
+function displaySprintRemainder() {
+  chrome.storage.local.get('displaySprintRemainder', (result) => {
+    const displaySprintRemainder = result['displaySprintRemainder'] !== undefined ? result['displaySprintRemainder'] : false;
+    if (!displaySprintRemainder) { return; }
+    
+    const sprintEndElements = document.querySelectorAll('[data-aid="IterationMarker__length"]:not([data-processed])');
+
+    sprintEndElements.forEach(element => {
+      const dateRangeText = element.textContent.trim();
+      const endDateText = dateRangeText.split(' - ')[1];
+    
+      const [day, monthName] = endDateText.split(' ');
+  
+      const currentYear = (new Date()).getFullYear();
+      const monthIndex = new Date(Date.parse(monthName +" 1, 2012")).getMonth();
+      const endDate = new Date(currentYear, monthIndex, day);
+  
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+  
+      const diffInDays = Math.ceil((endDate - today) / (1000 * 60 * 60 * 24));
+  
+      if (diffInDays >= 0) {
+        const remainingDaysText = ` / ${diffInDays} Days Left`;
+        element.textContent += remainingDaysText;
+      }
+  
+      element.setAttribute('data-processed', 'true');
+    });
+  });
+}
+
 function customStylingOptions(toggleId, defaultValue, style) {
   chrome.storage.local.get(toggleId, (result) => {
     const toggled = result[toggleId] !== undefined ? result[toggleId] : defaultValue;
@@ -187,6 +219,7 @@ function init() {
   applyUniqueColorsForAuthors();
   displayTicketStatus();
   addCodeBlockLineNumbers();
+  displaySprintRemainder();
   customStylingOptions('hideTicketSelectors', options['hideTicketSelectors'].defaultChecked, options['hideTicketSelectors'].style);
   customStylingOptions('dimUnstartedTickets', options['dimUnstartedTickets'].defaultChecked, options['dimUnstartedTickets'].style);
   customStylingOptions('hideRejectButton', options['hideRejectButton'].defaultChecked, options['hideRejectButton'].style);
@@ -208,6 +241,8 @@ chrome.storage.onChanged.addListener((changes, areaName) => {
         customStylingOptions(key, defaultChecked, style);
       } else if (key === 'displayTicketStatus') {
         displayTicketStatus();
+      } else if (key === 'displaySprintRemainder') {
+        displaySprintRemainder();
       }
     }
   }
@@ -216,6 +251,7 @@ chrome.storage.onChanged.addListener((changes, areaName) => {
 const fastObserver = new MutationObserver(debounce(() => {
   applyUniqueColorsForAuthors();
   displayTicketStatus();
+  displaySprintRemainder();
 }, 100));
 
 const slowObserver = new MutationObserver(debounce(() => {
