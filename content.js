@@ -146,8 +146,27 @@ function addCodeBlockLineNumbers() {
 function displaySprintRemainder() {
   chrome.storage.local.get('displaySprintRemainder', (result) => {
     const displaySprintRemainder = result['displaySprintRemainder'] !== undefined ? result['displaySprintRemainder'] : false;
-    if (!displaySprintRemainder) { return; }
-    
+
+    const styleTagId = 'displaySprintRemainder-style';
+    let styleTag = document.getElementById(styleTagId);
+  
+    if (!displaySprintRemainder) {
+      if (!styleTag) {
+        styleTag = document.createElement('style');
+        styleTag.id = styleTagId;
+        document.head.appendChild(styleTag);
+      }
+      styleTag.textContent = `
+      [data-aid="IterationMarker__length"][data-processed="true"] span {
+          display: none !important;
+      }`;
+      return;
+    } else {
+      if (styleTag) {
+        styleTag.textContent = '';
+      }
+    }
+
     const sprintEndElements = document.querySelectorAll('[data-aid="IterationMarker__length"]:not([data-processed])');
 
     sprintEndElements.forEach(element => {
@@ -166,8 +185,9 @@ function displaySprintRemainder() {
       const diffInDays = Math.ceil((endDate - today) / (1000 * 60 * 60 * 24));
   
       if (diffInDays >= 0) {
-        const remainingDaysText = ` / ${diffInDays} Days Left`;
-        element.textContent += remainingDaysText;
+        const remainingDaysElement = document.createElement('span');
+        remainingDaysElement.textContent = ` / ${diffInDays} Days Left`;
+        element.appendChild(remainingDaysElement);
       }
   
       element.setAttribute('data-processed', 'true');
