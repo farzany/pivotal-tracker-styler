@@ -20,8 +20,8 @@ Pivotal Tracker Styler is a Chrome extension that enhances the look and feel of 
 - Better inline code and code block styling with line numbers
 - Expanded ticket details and comments section
 - Streamlined ticket actions for efficiency
-- **Optional** Clear ticket status (SCRUM) displayed as gray text (excluding unstarted tickets)
-- **Optional** Removal of REJECT button from ticket preview - still available in the expanded view
+- **Optional** clear ticket status (SCRUM) displayed as gray text (excluding unstarted tickets)
+- **Optional** removal of REJECT button from ticket preview - still available in the expanded view
 - **Optional** removal of ticket selector button for a cleaner interface (re-activatable during ticket organization)
 - **Optional** feature to gray out unstarted tickets, promoting the completion of in-progress tasks
 - **Optional** feature to discretely display how many days remain until the end of each sprint
