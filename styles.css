@@ -250,11 +250,18 @@ span.StoryPreviewItemButtons__container {
     color: #1F2937 !important;
 }
 
+[class*="ReleaseStoryCount"] {
+    color: #1F2937 !important;
+}
+
 .story.release .preview {
     background-color: #FEF9C3 !important;
     color: #1F2937 !important;
-    border-top: #1F2937 1px solid !important;
-    border-bottom: #1F2937 1px solid !important;
+    border-bottom: 1px solid #DDD !important;
+}
+
+.story.release.is_release_past_deadline .preview {
+    background-color: #FB7185 !important;
 }
 
 .story.release .preview  .story_name {
