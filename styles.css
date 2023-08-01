@@ -456,6 +456,8 @@ section.edit .controls .bubble {
 
 [data-aid="ReactionBar"] {
     width: fit-content !important;
+    display: flex !important;
+    gap: 5px !important;
 }
 
 [data-aid="ReactionBar"] div[class*="ReactionPill"] span {
