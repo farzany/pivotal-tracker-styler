@@ -66,6 +66,14 @@ section.panels .table.no_panels_visible:before {
     color: #D1D5DB !important;
 }
 
+.sidebar.expanded {
+    width: 175px;
+}
+
+.workspace .sidebar.expanded {
+    width: 230px !important;
+}
+
 /* Ticket Layout Styles */
 
 [data-aid="VelocityIndicator"] {
@@ -443,6 +451,26 @@ section.maximized [data-aid="StoryDetailsEdit"] {
     padding-bottom: 1.5px !important;
 }
 
+.workspace .items.settings_area button {
+    background-color: #3B82F6 !important;
+    color: white !important;
+    border: none !important;
+    cursor: pointer !important;
+} 
+
+.workspace .sidebar.expanded .workspace.actions button {
+    background-color: #3B82F6 !important;
+    color: white !important;
+    border: none !important;
+    margin: 5px !important;
+    margin-right: 0 !important;
+    border-radius: 5px !important;
+} .workspace .sidebar.expanded .workspace.actions button::before {
+    color: white !important;
+} .workspace .sidebar.expanded .workspace.actions span, .workspace .workspace.actions button  {
+    cursor: pointer !important;
+}
+
 .controls .close {
     border-radius: 5px !important;
 }
@@ -613,10 +641,6 @@ pre::-webkit-scrollbar-thumb {
 }
 
 /* General Page Layout Styles */
-
-.sidebar.expanded {
-    width: 175px;
-}
 
 section.project article.main {
     left: 175px !important;

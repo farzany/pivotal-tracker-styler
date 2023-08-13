@@ -22,6 +22,11 @@
       "matches": ["https://www.pivotaltracker.com/n/projects/*"],
       "js": ["content.js"],
       "css": ["styles.css"]
+    },
+    {
+      "matches": ["https://www.pivotaltracker.com/n/workspaces/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
     }
   ]
 }
