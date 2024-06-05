@@ -480,6 +480,13 @@ section.edit .controls .bubble {
     background-color: #16A34A !important;
 }
 
+section.tasks div[data-aid*="TaskShow"][class*="complete"] {
+    background-color: #4ADE80 !important;
+} section.tasks div[data-aid*="TaskShow"] {
+    background-color: #E2E8F0 !important;
+    border-radius: 5px !important;
+}
+
 /* Reactions Styles */
 
 [data-aid="ReactionBar"] {
